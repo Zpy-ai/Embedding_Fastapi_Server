@@ -40,12 +40,12 @@ modelsAPI8.0/
 pip install -r requirements.txt
 
 ### 3.2 API 密钥配置
-在 `api/config.py` 文件中配置 API 密钥，默认值为 `sk-proj-mimouse`，请根据实际需求修改：
+在 `api/config.py` 文件中配置 API 密钥，默认值为 `your_api_key`，请根据实际需求修改：
 
 ```python
 from os import getenv
 
-sk_key = getenv("sk-key", "sk-proj-mimouse")
+sk_key = getenv("sk-key", "your_api_key")
 ```
 
 ## 四、使用指南
