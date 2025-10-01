@@ -1,0 +1,109 @@
+/root/.cache/huggingface/modules/transformers_modules/jinaai/jina-clip-implementation/51f02de9f2cf8afcd3bac4ce996859ba96f9f8e9/modeling_clip.py:175: UserWarning: xFormers is not installed. Check https://github.com/facebookresearch/xformers?tab=readme-ov-file#installing-xformers for installation instructions, disabling
+  warnings.warn(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+You are attempting to use Flash Attention 2.0 without specifying a torch dtype. This might lead to unexpected behaviour
+INFO:     Started server process [133856]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:6008 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [133703]
+rt create_search_assistant, check_status
+ImportError: cannot import name 'create_search_assistant' from 'common.bot' (/home/modelsAPI/common/bot.py)
+ast):
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/middleware/cors.py", line 91, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/middleware/cors.py", line 146, in simple_response
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/home/modelsAPI/api/jinaranker.py", line 43, in get_reranker
+    b64_img = base64_to_pil_image(b64_img)
+  File "/home/modelsAPI/utils/convert.py", line 10, in base64_to_pil_image
+    image_data = base64.b64decode(base64_string)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [118148]
+TPSConnection object at 0x7718499eb910>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 36e61df0-8a15-4a82-9d02-c51c36845717)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
+    hf_hub_download(
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1008, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1115, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1648, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/modelsAPI/main.py", line 3, in <module>
+    from api.router import api_router
+  File "/home/modelsAPI/api/router.py", line 2, in <module>
+    from api import embeding, bgeranker, clip, health, jinaranker
+  File "/home/modelsAPI/api/embeding.py", line 16, in <module>
+    model = load_bgem3model()  # 预加载BGE模型
+  File "/home/modelsAPI/common/bot.py", line 11, in load_bgem3model
+    return SentenceTransformer("models/bge-m3", device=device)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 321, in __init__
+    modules = self._load_auto_model(
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 1606, in _load_auto_model
+    transformer_model = Transformer(
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 80, in __init__
+    config, is_peft_model = self._load_config(model_name_or_path, cache_dir, backend, config_args)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 145, in _load_config
+    return AutoConfig.from_pretrained(model_name_or_path, **config_args, cache_dir=cache_dir), False
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/transformers/models/auto/configuration_auto.py", line 1114, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/transformers/configuration_utils.py", line 590, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/transformers/configuration_utils.py", line 649, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/opt/miniconda3/envs/bge/lib/python3.10/site-packages/transformers/utils/hub.py", line 491, in cached_files
+    raise OSError(
+OSError: We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
