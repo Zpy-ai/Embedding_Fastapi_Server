@@ -43,10 +43,15 @@ pip install -r requirements.txt
 在 `api/config.py` 文件中配置 API 密钥，默认值为 `your_api_key`，请根据实际需求修改：
 
 ```python
-from os import getenv
+import os
 
-sk_key = getenv("sk-key", "your_api_key")
+sk_key = os.environ.get("sk-key", "your_api_key")  # 替换为你的API密钥
+dashscope_api_key = os.environ.get("DASHSCOPE_API_KEY", "your_dashscope_api_key_here")  # Dashscope API密钥
 ```
+
+**环境变量配置方式：**
+- 设置 `sk-key` 环境变量用于API认证
+- 设置 `DASHSCOPE_API_KEY` 环境变量用于夸克Web搜索功能
 
 ## 四、使用指南
 

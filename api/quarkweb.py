@@ -3,7 +3,7 @@ from fastapi import Depends, HTTPException, status, APIRouter
 import json
 from api.schemas import SearchRequest, SearchResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from api.config import sk_key
+from api.config import sk_key, dashscope_api_key
 from controller.quark import create_search_assistant, check_status
 
 
@@ -12,7 +12,7 @@ router = APIRouter()  # 创建子路由
 security = HTTPBearer()
 
 # 设置Dashscope API密钥
-dashscope.api_key = "your_dashscope_api_key_here"  # 替换为你的Dashscope API密钥
+dashscope.api_key = dashscope_api_key
 
 @router.post("/websearch", summary="7、QuarkSearch", response_model=SearchResponse)
 async def search_endpoint(request: SearchRequest ,
