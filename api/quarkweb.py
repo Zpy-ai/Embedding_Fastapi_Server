@@ -12,7 +12,7 @@ router = APIRouter()  # 创建子路由
 security = HTTPBearer()
 
 # 设置Dashscope API密钥
-dashscope.api_key = "sk-139a40229c0e4bd58191a7a2f8c9c8f3"
+dashscope.api_key = "your_dashscope_api_key_here"  # 替换为你的Dashscope API密钥
 
 @router.post("/websearch", summary="7、QuarkSearch", response_model=SearchResponse)
 async def search_endpoint(request: SearchRequest ,
